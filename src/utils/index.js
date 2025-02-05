@@ -1,5 +1,6 @@
 
 // リソースを一括管理
+
 // 変数名やリソース名の統一
 // コードの再利用性と保守性の向上
 // パフォーマンスの最適化
@@ -46,6 +47,7 @@ import frame from "/assets/images/frame.png";
 
 export const heroVideo = hmv;
 export const smallHeroVideo = smallmv;
+
 export const highlightFirstVideo = highlightFirstmv;
 export const highlightSecondVideo = highlightSectmv;
 export const highlightThirdVideo = highlightThirdmv;
