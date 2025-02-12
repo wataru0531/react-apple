@@ -25,7 +25,7 @@ export const hightlightsSlides = [
       "Game‑changing chip.",
       "Groundbreaking performance.",
     ],
-    video: highlightFirstVideo,
+    video: highlightFirstVideo, // 動画のurl
     videoDuration: 4,
   },
   {
@@ -52,6 +52,7 @@ export const hightlightsSlides = [
   },
 ];
 
+// iPhoneの各モデルのデータ
 export const models = [
   {
     id: 1,

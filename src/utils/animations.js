@@ -49,14 +49,14 @@ export const animationWithGsap = (
   })
 }
 
-
+// useRefで取得しているDOM(_rotationRef)へのタイムライン処理
 export const animateWithGsapTimeline = (
   _timeline, 
-  _rotationRef, 
-  _rotationState, 
-  _firstTarget,
-  _secondTarget,
-  _animationProps,
+  _rotationRef, // 回転させるDOMへの参照
+  _rotationState, // 回転。デフォルトは0
+  _firstTarget, // "view1"
+  _secondTarget, // "view2"
+  _animationProps, // { ...アニメーションのデータ }
 ) => {
   _timeline.to(_rotationRef.current.rotation, {
     y: _rotationState,
@@ -67,7 +67,7 @@ export const animateWithGsapTimeline = (
   _timeline.to(_firstTarget, {
     ..._animationProps,
     ease: "ease2.inOut",
-  }, "<");
+  }, "<"); // 直前のtweenの開始時
 
   _timeline.to(_secondTarget, {
     ..._animationProps,

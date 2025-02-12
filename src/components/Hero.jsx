@@ -7,7 +7,7 @@ import { heroVideo, smallHeroVideo } from "../utils";
 
 const Hero = () => {
   // スマホとpcでvideoを出し分ける
-  const [videoSrc, setVideoSrc] = useState(
+  const [ videoSrc, setVideoSrc ] = useState(
     window.innerWidth < 769 ? smallHeroVideo : heroVideo
   );
 
@@ -48,7 +48,13 @@ const Hero = () => {
     };
   }, []);
 
-  // 
+  // GSAPのReact用のフック
+  // → ・自動的にクリーンアップしてくれる(useEffectでは記述が必要)
+  //   ・コンポーネントがアンマウントされたときに自動的にアニメーションがクリーンアップされるので、gsap.killTweensOf() を書く必要がない。
+  //   ・内部でGSAPのContext API を使っているため、GSAP のスコープが適切に管理され、kill() の管理をしなくても良くなる。
+  //    ・domの取得もuseRefを使わなくてもいい(Context APIを使っているため)
+  // 第２引数 → useEffectと同様、初回に発火
+  //           配列に含んだステートの更新がされるたびに発火
   useGSAP(() => {
     gsap.to("#hero", { opacity: 1, delay: 2 });
     gsap.to("#cta", { opacity: 1, y: -50, delay: 2 });
@@ -75,7 +81,7 @@ const Hero = () => {
             autoPlay
             muted
             playsInline={true} // iOS（特に iPhone）で動画をフルスクリーンではなく、ページ内で再生する ための属性
-            key={videoSrc}
+            key={ videoSrc }
           >
             <source src={videoSrc} type="video/mp4" />
             {/* <source src={vide2Src} type="video/webm" /> */}
