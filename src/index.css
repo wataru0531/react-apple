@@ -96,6 +96,7 @@ canvas {
     @apply w-full flex-center flex-col md:flex-row mt-10 md:mt-16 gap-5
   }
 
+  /* opacityをで、scaleを1.5倍にしておく */
   .feature-video {
     @apply w-full h-full object-cover object-center scale-150 opacity-0
   }

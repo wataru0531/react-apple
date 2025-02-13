@@ -30,11 +30,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
-export const animationWithGsap = (
+// scrollTriggerを備えたトゥイーン処理
+export const animateWithGsap = (
   _target, 
   _animationProps, 
-  _scrollProps
+  _scrollProps    // scrollTriggerに渡すオブジェクト
 ) => {
 
   gsap.to(_target, {
