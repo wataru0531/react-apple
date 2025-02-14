@@ -31,10 +31,19 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 // scrollTriggerを備えたトゥイーン処理
+// ⭐️toggleActions 
+// → ScrollTriggerでスクロールイベントが発生したとき、どのようにアニメーションを制御するかを指定するオプション
+//   toggleActions: "restart reverse restart reverse"
+//   → toggleActions: "onEnter時 onLeave時 onEnterBack時 onLeaveBack時" にそれぞれ発火
+//    ・onEnter（スクロールで要素が表示領域に入った時。restartとしていのは必ず最初から発火するため。）
+//      → playは途中から再生
+//    ・onLeave（スクロールで要素が表示領域から完全に出た時）
+//    ・onEnterBack（スクロールを戻して再び表示領域に入った時）
+//    ・onLeaveBack（スクロールを戻して表示領域から完全に出た時）
 export const animateWithGsap = (
   _target, 
   _animationProps, 
-  _scrollProps    // scrollTriggerに渡すオブジェクト
+  _scrollTriggerProps    // scrollTriggerに渡すオブジェクト
 ) => {
 
   gsap.to(_target, {
@@ -44,7 +53,7 @@ export const animateWithGsap = (
       trigger: _target,
       toggleActions: "restart reverse restart reverse",
       start: "top 85%", // trigger要素 ブラウザ
-      ..._scrollProps,
+      ..._scrollTriggerProps,
     }
   })
 }

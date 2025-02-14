@@ -1,15 +1,15 @@
 
 /* 
   ⭐️ @tailwind base;
-    → Tailwind CSS の基本スタイルをインポート するためのディレクティブ
+    → Tailwind CSS の基本スタイルをインポートするためのディレクティブ
       Tailwind が提供するリセットや、ブラウザのデフォルトスタイルを上書きするためのスタイルを読み込むために使う
 
   ⭐️ @tailwind components
-    → Tailwind CSS のコンポーネントスタイルをインポート するためのディレクティブ
+    → Tailwind CSS のコンポーネントスタイルをインポートするためのディレクティブ
       Tailwind が提供するコンポーネントクラス(例えば、ボタンやフォームのスタイル)を使うために必要なスタイルを読み込読み込む
 
   ⭐️ @tailwind utilities
-    → Tailwind CSS のユーティリティクラスをインポート するためのディレクティブ
+    → Tailwind CSS のユーティリティクラスをインポートするためのディレクティブ
       Tailwind CSS の最も重要な特徴である ユーティリティクラス（例えば、p-4, text-center, bg-blue-500 など）を読み込むために使う
 */
 
@@ -50,8 +50,8 @@ canvas {
       この構文を使うことで、Tailwind が生成するスタイルに 追加のカスタムスタイルを加えることができる
 
   ⭐️@apply 
-    → 既存の Tailwind CSS のユーティリティクラス をカスタムクラスに適用するためのディレクティブ
-      ここでは.flex-centerに、flex、items-centerなどのコードを足している
+    → 既存の Tailwind CSS のユーティリティクラスをカスタムクラスに追加するためのディレクティブ
+      ここでは.flex-centerというクラスを作り、flex、items-centerなどのコードを追加
   
 */
 
